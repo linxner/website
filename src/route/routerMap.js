@@ -32,6 +32,10 @@ const AsyncMore = Loadable({
     loader: () => import('../pages/more'),
     loading: MyLoadingComponent
 });
+const AsyncLogin= Loadable({
+    loader: () => import('../pages/login'),
+    loading: MyLoadingComponent
+});
 
 export default ()=>{
     return(
@@ -41,6 +45,7 @@ export default ()=>{
             <Route path='/blog' component={AsyncBlog} />
             <Route path='/journal' component={AsyncJournal} />
             <Route path='/more' component={AsyncMore} />
+            <Route path='/login' component={AsyncLogin} />
             <Redirect to='/'/>
         </Switch>
     )

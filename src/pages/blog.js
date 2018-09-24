@@ -9,6 +9,7 @@ export default class Blog extends React.Component {
 		return (
 			<div className="blog">
 				<h1>Blog</h1>
+				
 			</div>
 		);
 	}

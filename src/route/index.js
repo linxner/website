@@ -12,11 +12,9 @@ export default class App extends Component {
     }
   }
   componentDidMount(){
-      // 挂在组件后将loading dom删除
-     
+   
   }
 
-  
   render() {
     return (
       <Router history={history}> 

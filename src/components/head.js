@@ -14,6 +14,7 @@ class App extends Component {
               {indent:false,text:'BLOG',herf:'/blog'},
               {indent:false,text:'JOURNAL',herf:'/journal'},
               {indent:false,text:'MORE',herf:'/more'},
+              {indent:false,text:'LOGIN',herf:'/login'},
             ]
         } 
     }
@@ -29,7 +30,7 @@ class App extends Component {
             <Layout>
                 <Header className="header" >
                     <Row type='flex' align='middle' justify="center">
-                        <Col span={9} offset={3} className="logo"><h1>LOGO</h1></Col>
+                        <Col span={7} offset={3} className="logo"><h1>LOGO</h1></Col>
                         {this.state.nav.map((nav,i) => (<Col span={2}  key={i}><a  
                         className={nav.indent? 'nav-index':''}
                         onClick={this.toLink.bind(this,nav)}>
