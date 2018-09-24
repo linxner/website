@@ -9,7 +9,17 @@ export default class Blog extends React.Component {
 		return (
 			<div className="blog">
 				<h1>Blog</h1>
-				
+				<div className='blogWrapper'>
+					<div className='title'>
+						微博标题
+					</div>
+					<div className='description'>
+						内容描述
+					</div>
+					<div className='blogContent'>
+						博客内容
+					</div>
+				</div>ß
 			</div>
 		);
 	}

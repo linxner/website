@@ -13,13 +13,8 @@ export default class Home extends React.Component {
 			show: true
 		}
 	}
-	componentDidMount() {}
-	componentWillUpdate(nextProps, nextState) {
-		
-	}
+	
 	handleChange = () => {
-		var show = this.state.show
-		
 		this.setState({
 			show: !this.state.show
 		})
