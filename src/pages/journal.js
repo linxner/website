@@ -12,6 +12,9 @@ export default class Blog extends React.Component {
 				<div className='journalTitle'>
 					日志标题
 				</div>
+				<div className='journalContent'>
+					日志内容·
+				</div>
 			</div>
 		);
 	}
