@@ -18,6 +18,9 @@ export default class Blog extends React.Component {
 				<div className='journalDescription'>
 					日志描述
 				</div>
+				<div className='createDate'>
+					创建日期
+				</div>
 			</div>
 		);
 	}
