@@ -13,7 +13,10 @@ export default class Blog extends React.Component {
 					日志标题
 				</div>
 				<div className='journalContent'>
-					日志内容·
+					日志内容
+				</div>
+				<div className='journalDescription'>
+					日志描述
 				</div>
 			</div>
 		);
