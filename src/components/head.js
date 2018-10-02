@@ -22,7 +22,7 @@ class App extends Component {
   }
   toLink(n){
         const index = this.state.nav.indexOf(n)
-        this.props.history.push(this.state.nav[index].herf)
+        this.props.history.push({pathname:this.state.nav[index].herf,state:{id:999}})
   }
   render() {
     return (

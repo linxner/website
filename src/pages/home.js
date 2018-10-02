@@ -13,13 +13,11 @@ export default class Home extends React.Component {
 			show: true
 		}
 	}
-	
 	handleChange = () => {
 		this.setState({
 			show: !this.state.show
 		})
 	}
-	
 	render() {
 		var boxWrapper = {
 			width: 400,
