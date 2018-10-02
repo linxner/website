@@ -18,6 +18,18 @@ export default class Blog extends React.Component {
 				<div className='phone'>
 					 电话
 				</div>
+				<div className='phone'>
+					 电话
+				</div>
+				<div className='phone'>
+					 电话
+				</div>
+				<div className='phone'>
+					 电话
+				</div>
+				<div className='phone'>
+					 电话
+				</div>
 			</div>
 		);
 	}

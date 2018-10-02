@@ -6,7 +6,7 @@ export default class Project extends React.Component {
 		super(props);
 	}
 	componentDidMount(){
-		console.log(this.props.location.state.id)
+		  
 	}
 	render() {
 		return (
