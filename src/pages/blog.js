@@ -16,7 +16,7 @@ export default class Blog extends React.Component {
 						内容描述
 					</div>
 					<div className='content'>
-					我的博客内容
+						我的博客内容
 					</div>
 				</div>
 			</div>
