@@ -41,6 +41,9 @@ export default class Project extends React.Component {
 						<div className="col-md-3 col-md-offset-3">
 							<button type="button" className="btn btn-primary">（首选项）Primary</button>
 						</div>
+						<div className="col-md-3 col-md-offset-3">
+							<button type="button" className="btn btn-primary">（首选项）Primary</button>
+						</div>
 					</div>
 				</div>
 			</div>
