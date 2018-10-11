@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Layout, Row, Col} from 'antd'
+import {Layout, Row, Col} from 'antd';
+import './header.less'
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header} = Layout;
 
 
 class App extends Component {
@@ -27,19 +28,17 @@ class App extends Component {
   }
   render() {
     return (
-        <div>
-            <Layout>
-                <Header className="header" >
-                    <Row type='flex' align='middle' justify="center">
-                        <Col span={7} offset={3} className="logo"><h1>LOGO</h1></Col>
-                        {this.state.nav.map((nav,i) => (<Col span={2}  key={i}><a  
-                        className={nav.indent? 'nav-index':''}
-                        onClick={this.toLink.bind(this,nav)}>
-                        {nav.text}</a></Col>))}
-                    </Row>
-                </Header>
-            </Layout>
-          </div>
+        <Layout>
+            <Header className="header" >
+                <Row type='flex' align='middle' justify="center">
+                    <Col span={7} offset={3} className="logo"><h1>LOGO</h1></Col>
+                    {this.state.nav.map((nav,i) => (<Col span={2}  key={i}><a  
+                    className={nav.indent? 'nav-index':''}
+                    onClick={this.toLink.bind(this,nav)}>
+                    {nav.text}</a></Col>))}
+                </Row>
+            </Header>
+        </Layout>
     );
   }
 }

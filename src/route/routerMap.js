@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Route,Switch,Redirect} from 'react-router-dom';
 import Loadable from 'react-loadable';
 import MyLoadingComponent from './routerLoad'
@@ -9,31 +9,35 @@ import MyLoadingComponent from './routerLoad'
 
 // home
 const AsyncHome = Loadable({
-    loader: () => import('../pages/home'),
+    loader: () => import('../pages/home/home'),
     loading: MyLoadingComponent
 });
 // project
 const AsyncProject= Loadable({
-    loader: () => import('../pages/project'),
+    loader: () => import('../pages/project/project'),
     loading: MyLoadingComponent
 });
 // blog
 const AsyncBlog = Loadable({
-    loader: () => import('../pages/blog'),
+    loader: () => import('../pages/blog/blog'),
     loading: MyLoadingComponent
 });
 // journal
 const AsyncJournal = Loadable({
-    loader: () => import('../pages/journal'),
+    loader: () => import('../pages/journal/journal'),
     loading: MyLoadingComponent
 });
 // more
 const AsyncMore = Loadable({
-    loader: () => import('../pages/more'),
+    loader: () => import('../pages/more/more'),
     loading: MyLoadingComponent
 });
 const AsyncLogin= Loadable({
-    loader: () => import('../pages/login'),
+    loader: () => import('../pages/login/login'),
+    loading: MyLoadingComponent
+});
+const AsyncUtils= Loadable({
+    loader: () => import('../pages/utils/utils'),
     loading: MyLoadingComponent
 });
 
@@ -46,6 +50,7 @@ export default ()=>{
             <Route path='/journal' component={AsyncJournal} />
             <Route path='/more' component={AsyncMore} />
             <Route path='/login' component={AsyncLogin} />
+            <Route path='/utils' component={AsyncUtils} />
             <Redirect to='/'/>
         </Switch>
     )

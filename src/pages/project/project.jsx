@@ -1,10 +1,7 @@
 import React from 'react';
-import { Router, Route, Link } from 'react-router-dom';
 
 export default class Project extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+
 	componentDidMount(){
 		console.log(this.props.location.state)
 	}

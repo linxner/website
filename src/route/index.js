@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Router} from 'react-router-dom'
 import RouterMap from './routerMap'
 import history from '../untils/history'
-import Head from '../components/head'
+import Header from '../components/header/header'
 
 export default class App extends Component {
   constructor(){
@@ -19,8 +19,8 @@ export default class App extends Component {
     return (
       <Router history={history}> 
         <div className="main">
-            <Head history={history}/>
-            <RouterMap/>
+          <Header history={history}/>
+          <RouterMap/>
         </div>
       </Router>
     );

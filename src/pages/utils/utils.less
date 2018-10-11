@@ -1,0 +1,135 @@
+.items {
+    height: 1000%;
+    .CodeWrapper {
+        margin-bottom: 20px;
+    }
+    .title {
+        font-size: 26px;
+        font-weight: bold;
+        color: #000;
+        line-height: 2;
+    }
+    .tag {
+        display: inline-block;
+        padding: 2px 10px;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: bold;
+        line-height: 2;
+    }
+    .code {
+        line-height: 2;
+        background-color: #001529;
+        font-size: 1.5rem;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin: 10px 0 20px;
+    }
+    .cssTag {
+        background-color: #7983ff;
+    }
+    .htmlTag {
+        background-color: #ff4c9f;
+    }
+    .codeHtml {
+        .htmlTagName {
+            color: #2cefd8;
+        }
+        .AttrName {
+            color: #c7f683;
+        }
+        .AttrProp {
+            color: #ffd694;
+        }
+        .Content {
+            color: #d7ecff;
+        }
+    }
+    .codeCss {
+        .className {
+            color: #5ac8e3;
+            span {
+                &:first-child {
+                    color: #c7f683;
+                }
+            }
+        }
+        .style {
+            color: #d7ecff;
+            .styleItem {
+                text-indent: 1em;
+                .styleName {
+                    color: #85b4ff;
+                }
+            }
+            .douhao {
+                color: #25d0e5;
+            }
+        }
+        .rightQuote {
+            color: #5ac8e3;
+        }
+        .AnimeName {
+            color: #5ac8e3;
+            span {
+                &:first-child {
+                    color: #b7adff;
+                }
+            }
+        }
+        .AnimeFrom,
+        .AnimeTo {
+            color: #5ac8e3;
+            text-indent: 1em;
+            span {
+                &:first-child {
+                    color: #c7f683;
+                }
+            }
+            .styleItem {
+                text-indent: 2em;
+            }
+        }
+    }
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    .hover-underline-animation::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+    }
+    .donut {
+        display: inline-block;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left-color: #7983ff;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: donut-spin 1.2s linear infinite;
+        margin: 10px 20px;
+    }
+}
+
+@keyframes donut-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
