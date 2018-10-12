@@ -19,18 +19,10 @@ export default class Home extends React.Component {
 		})
 	}
 	render() {
-		var boxWrapper = {
-			width: 400,
-			height: 400,
-			position: 'absolute',
-			top: 100,
-			left: 100,
-			textAlign:'center'
-		}
 		return (
 			<div className="home">
 				<div className="mask">
-					<div className="boxwrapper" style={boxWrapper} onClick={this.handleChange}>
+					<div className="boxwrapper" onClick={this.handleChange}>
 						<Button onClick={this.inc=()=>{store.dispatch({type:'INCREMENT'})}}>+</Button>
 						<Button onClick={this.dec=()=>{store.dispatch({type:'DECREMENT'})}}>-</Button>
 						<p>{store.getState()}</p>
