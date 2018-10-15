@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button} from 'antd'
 import {createStore} from 'redux'
-import counter from '../../reducer/index'
+import counter from '../../reducer/index';
 
 const store =createStore(counter)
 export default class Home extends React.Component {
@@ -10,7 +10,7 @@ export default class Home extends React.Component {
 		this.state = {
 			pathname: '/',
 			style: 'none',
-			show: true
+			show: true 
 		}
 	}
 	handleChange = () => {
@@ -28,9 +28,7 @@ export default class Home extends React.Component {
 						<p>{store.getState()}</p>
 					</div>
 				</div>
-				<div className="des">
-					<h1>The Infinity Imagination</h1>
-				</div>
+			
 		    </div>
 		);
 	}
