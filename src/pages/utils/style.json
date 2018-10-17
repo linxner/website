@@ -1,115 +1,180 @@
 {
-    "HoverUnderlineAnimation": {
-        "htmlCode": [{
-            "tag": "div",
-            "Attr": [{
-                "AttrName": "class",
-                "AttrProp": "hover-underline-animation"
+    "code": [{
+            "title": "Hover underline animation",
+            "htmlCode": [{
+                "tag": "div",
+                "Attr": [{
+                    "AttrName": "class",
+                    "AttrProp": "hover-underline-animation"
+                }],
+                "content": "Hover this text to see the effect!"
             }],
-            "content": "Hover this text to see the effect!"
-        }],
-        "cssCode": {
-            "AnimeCss": {},
-            "StyleCss": [{
-                "className": ".hover-underline-animation",
-                "style": [{
-                    "styleName": "display",
-                    "styleAttr": "inline-block"
+            "cssCode": {
+                "StyleCss": [{
+                    "className": ".hover-underline-animation",
+                    "style": [{
+                        "styleName": "display",
+                        "styleAttr": "inline-block"
+                    }, {
+                        "styleName": "position",
+                        "styleAttr": "relative"
+                    }, {
+                        "styleName": "color",
+                        "styleAttr": "#0087ca"
+                    }]
                 }, {
-                    "styleName": "position",
-                    "styleAttr": "relative"
+                    "className": ".hover-underline-animation::after",
+                    "style": [{
+                        "styleName": "content",
+                        "styleAttr": "''"
+                    }, {
+                        "styleName": "width",
+                        "styleAttr": "100%"
+                    }, {
+                        "styleName": "transform",
+                        "styleAttr": "scaleX(0)"
+                    }, {
+                        "styleName": "height",
+                        "styleAttr": "2px"
+                    }, {
+                        "styleName": "bottom",
+                        "styleAttr": "0"
+                    }, {
+                        "styleName": "left",
+                        "styleAttr": "0"
+                    }, {
+                        "styleName": "background-color",
+                        "styleAttr": "#0087ca"
+                    }, {
+                        "styleName": "transition",
+                        "styleAttr": "transform 0.25s ease-out"
+                    }]
                 }, {
-                    "styleName": "color",
-                    "styleAttr": "#0087ca"
-                }]
-            }, {
-                "className": ".hover-underline-animation::after",
-                "style": [{
-                    "styleName": "content",
-                    "styleAttr": "''"
-                }, {
-                    "styleName": "width",
-                    "styleAttr": "100%"
-                }, {
-                    "styleName": "transform",
-                    "styleAttr": "scaleX(0)"
-                }, {
-                    "styleName": "height",
-                    "styleAttr": "2px"
-                }, {
-                    "styleName": "bottom",
-                    "styleAttr": "0"
-                }, {
-                    "styleName": "left",
-                    "styleAttr": "0"
-                }, {
-                    "styleName": "background-color",
-                    "styleAttr": "#0087ca"
-                }, {
-                    "styleName": "transition",
-                    "styleAttr": "transform 0.25s ease-out"
-                }]
-            }, {
-                "className": ".hover-underline-animation:hover::after",
-                "style": [{
-                    "styleName": "transform",
-                    "styleAttr": "scale(1)"
-                }]
-            }]
-        }
-    },
-    "DonutSpinner": {
-        "htmlCode": [{
-            "tag": "div",
-            "Attr": [{
-                "AttrName": "class",
-                "AttrProp": "donut"
-            }],
-            "content": ""
-        }],
-        "cssCode": {
-            "AnimeCss": [{
-                "AnimeName": "@keyframes donut-spin",
-                "From": {
-                    "percentFrom": "0%",
+                    "className": ".hover-underline-animation:hover::after",
                     "style": [{
                         "styleName": "transform",
-                        "styleAttr": "rotate(0deg)"
+                        "styleAttr": "scale(1)"
                     }]
-                },
-                "To": {
-                    "percentTo": "100%",
-                    "style": [{
-                        "styleName": "transform",
-                        "styleAttr": "rotate(0deg)"
-                    }]
-                }
-            }],
-            "StyleCss": [{
-                "className": ".donut",
-                "style": [{
-                    "styleName": "display",
-                    "styleAttr": "inline-block"
-                }, {
-                    "styleName": "border",
-                    "styleAttr": "4px solid rgba(0, 0, 0, 0.1)"
-                }, {
-                    "styleName": "border-left-color",
-                    "styleAttr": "#7983ff"
-                }, {
-                    "styleName": "border-radius",
-                    "styleAttr": "50%"
-                }, {
-                    "styleName": "width",
-                    "styleAttr": "30px"
-                }, {
-                    "styleName": "height",
-                    "styleAttr": "30px"
-                }, {
-                    "styleName": "animation",
-                    "styleAttr": "donut-spin 1.2s linear infinite"
                 }]
-            }]
+            }
+        }, {
+            "title": "Donut spinner",
+            "htmlCode": [{
+                "tag": "div",
+                "Attr": [{
+                    "AttrName": "class",
+                    "AttrProp": "donut"
+                }],
+                "content": ""
+            }],
+            "cssCode": {
+                "AnimeCss": [{
+                    "AnimeName": "@keyframes donut-spin",
+                    "From": {
+                        "percentFrom": "0%",
+                        "style": [{
+                            "styleName": "transform",
+                            "styleAttr": "rotate(0deg)"
+                        }]
+                    },
+                    "To": {
+                        "percentTo": "100%",
+                        "style": [{
+                            "styleName": "transform",
+                            "styleAttr": "rotate(0deg)"
+                        }]
+                    }
+                }],
+                "StyleCss": [{
+                    "className": ".donut",
+                    "style": [{
+                        "styleName": "display",
+                        "styleAttr": "inline-block"
+                    }, {
+                        "styleName": "border",
+                        "styleAttr": "4px solid rgba(0, 0, 0, 0.1)"
+                    }, {
+                        "styleName": "border-left-color",
+                        "styleAttr": "#7983ff"
+                    }, {
+                        "styleName": "border-radius",
+                        "styleAttr": "50%"
+                    }, {
+                        "styleName": "width",
+                        "styleAttr": "30px"
+                    }, {
+                        "styleName": "height",
+                        "styleAttr": "30px"
+                    }, {
+                        "styleName": "animation",
+                        "styleAttr": "donut-spin 1.2s linear infinite"
+                    }]
+                }]
+            }
+        },
+        {
+            "title": ":not selector",
+            "htmlCode": [{
+                "tag": "ul",
+                "Attr": [{
+                    "AttrName": "class",
+                    "AttrProp": "css-not-selector-shortcut"
+                }],
+                "content": "",
+                "children": [{
+                    "tag": "li",
+                    "content": "One"
+                }, {
+                    "tag": "li",
+                    "content": "Two"
+                }, {
+                    "tag": "li",
+                    "content": "Three"
+                }, {
+                    "tag": "li",
+                    "content": "Four"
+                }]
+            }],
+            "cssCode": {
+                "StyleCss": [{
+                        "className": ".css-not-selector-shortcut",
+                        "style": [{
+                            "styleName": "display",
+                            "styleAttr": "flex"
+                        }]
+                    },
+                    {
+                        "className": "ul",
+                        "style": [{
+                            "styleName": "padding-left",
+                            "styleAttr": "0"
+                        }]
+                    }, {
+                        "className": "li",
+                        "style": [{
+                                "styleName": "list-style-type",
+                                "styleAttr": "none"
+                            },
+                            {
+                                "styleName": "margin",
+                                "styleAttr": "0"
+                            }, {
+                                "styleName": "padding",
+                                "styleAttr": "0 0.75rem"
+                            }
+                        ]
+                    },
+                    {
+                        "className": "li: not(:last-child)",
+                        "style": [{
+                            "styleName": "border-right",
+                            "styleAttr": "2px solid #d2d5e4"
+                        }]
+                    }
+                ]
+            }
+
         }
-    }
+    ]
+
 }
