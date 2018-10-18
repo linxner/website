@@ -35,7 +35,7 @@
     "jquery": "^3.3.1",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
-    "mongoose": "^5.2.14",
+    "mongoose": "^5.3.4",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",

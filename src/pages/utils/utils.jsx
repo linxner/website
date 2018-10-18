@@ -8,7 +8,7 @@ const { Sider, Content } = Layout;
 class componentName extends Component {
 
     componentDidMount = () => {
-
+        
     }
     render() {
         return (

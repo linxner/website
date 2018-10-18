@@ -22,7 +22,7 @@ export default class App extends Component {
           <Header history={history}/>
           <div className='mainContent'>
             <RouterMap/>
-          </div> 
+          </div>
         </div>
       </Router>
     );
