@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Layout, Row, Col } from 'antd';
-import './header.less'
+import Register from '../../pages/register/register';
+import Login from '../../components/login/login';
+import './header.less';
 
 const { Header } = Layout;
 
@@ -16,7 +19,10 @@ class App extends Component {
                 { indent: false, text: 'JOURNAL', herf: '/journal' },
                 { indent: false, text: 'MORE', herf: '/more' },
                 { indent: false, text: 'UTILS', herf: '/utils' },
-            ]
+            ],
+            showRegister: false,
+            showMask: false,
+            showLogin: false
         }
     }
     componentDidMount() {
@@ -24,6 +30,12 @@ class App extends Component {
     toLink(n) {
         const index = this.state.nav.indexOf(n)
         this.props.history.push({ pathname: this.state.nav[index].herf, state: { id: 999 } })
+    }
+    showRegister = (e) => {
+        this.setState({
+            showRegister: e,
+            showLogin:!e
+        })
     }
     render() {
         return (
@@ -36,9 +48,25 @@ class App extends Component {
                                 className={nav.indent ? 'nav-index' : ''}
                                 onClick={this.toLink.bind(this, nav)}>
                                 {nav.text}</a></Col>))}
-                            <Col span={2} offset={1}>register/login</Col>
+                            <Col span={2} offset={1}><a onClick={this.register = () => { this.setState({ showRegister: true, showMask: true, showLogin: false }) }}>register</a><span>/</span><a onClick={this.login = () => { this.setState({ showRegister: false, showMask: true, showLogin: true }) }}>login</a></Col>
                         </Row>
                     </Header>
+                    {
+                        this.state.showMask &&
+                        <div className='signMask' onClick={this.hideSignMask = () => { this.setState({ showMask: false }) }}>
+                            {
+                                this.state.showMask && this.state.showRegister &&
+                                <Register />
+                            }
+                            {
+                                this.state.showLogin && this.state.showMask &&
+                                <div className='login' onClick={(e) => { e.stopPropagation() }}>
+                                    <Login showRegister={this.showRegister} />
+                                </div>
+                            }
+                        </div>
+                    }
+
                 </Layout>
             </div>
 
