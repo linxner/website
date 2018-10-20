@@ -26,6 +26,7 @@ class App extends Component {
         }
     }
     componentDidMount() {
+        
     }
     toLink(n) {
         const index = this.state.nav.indexOf(n)
@@ -48,10 +49,10 @@ class App extends Component {
                                 className={nav.indent ? 'nav-index' : ''}
                                 onClick={this.toLink.bind(this, nav)}>
                                 {nav.text}</a></Col>))}
-                            <Col span={2} offset={1}><a onClick={this.register = () => { this.setState({ showRegister: true, showMask: true, showLogin: false }) }}>register</a><span>/</span><a onClick={this.login = () => { this.setState({ showRegister: false, showMask: true, showLogin: true }) }}>login</a></Col>
+                            <Col span={2} offset={1}><Link to='/register'>register</Link><span>/</span><Link to='/login'>login</Link></Col>
                         </Row>
                     </Header>
-                    {
+                    {/* {
                         this.state.showMask &&
                         <div className='signMask' onClick={this.hideSignMask = () => { this.setState({ showMask: false }) }}>
                             {
@@ -65,7 +66,7 @@ class App extends Component {
                                 </div>
                             }
                         </div>
-                    }
+                    } */}
 
                 </Layout>
             </div>

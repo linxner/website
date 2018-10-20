@@ -51,13 +51,8 @@ app.post('/register', function (req, res) {
         user.save(function (err, product) {
             if (err) {
                 console.log(err)
-            } else {
-                User.find({
-                    nickname: '1'
-                }, function (err, res) {
-                    console.log(res)
-                    console.log('success')
-                })
+            } else{
+                console.log('save successful')
             }
         })
         return res.sendStatus(200)

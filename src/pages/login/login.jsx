@@ -11,16 +11,22 @@ class NormalLoginForm extends React.Component {
             if (!err) {
                 axios.post('http://localhost:8808/login', { data: JSON.stringify(values) }).then((res) => {
                    console.log(res)
-                    
+                    if(res.data==='登陆成功'){
+                        window.location.href='http://localhost:3000'
+                    }
                 })
             }
         });
     }
 
     render() {
+        var loginStyle={
+            width:'40%',
+            margin:'100px auto'
+        }
         const { getFieldDecorator } = this.props.form;
         return (
-            <Form onSubmit={this.handleSubmit} className="login-form" style={{ width: '100%' }} >
+            <Form onSubmit={this.handleSubmit} className="login-form" style={loginStyle} >
                 <FormItem>
                     {getFieldDecorator('userName', {
                         rules: [{ required: true, message: 'Please input your username!' }],
@@ -46,7 +52,7 @@ class NormalLoginForm extends React.Component {
                     <br />
                     <Button type="primary" htmlType="submit" className="login-form-button">Log in</Button>
                     <br />
-                    Or <a onClick={() => { this.props.showRegister(true) }}>register now!</a>
+                    Or <a onClick={() => { this.props.history.push('/register')}}>register now!</a>
                 </FormItem>
             </Form>
         );

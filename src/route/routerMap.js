@@ -32,11 +32,21 @@ const AsyncMore = Loadable({
     loader: () => import('../pages/more/more'),
     loading: MyLoadingComponent
 });
+//Utils
 const AsyncUtils= Loadable({
     loader: () => import('../pages/utils/utils'),
     loading: MyLoadingComponent
 });
-
+//register
+const AsyncRegister=Loadable({
+    loader:() => import('../pages/register/register'),
+    loading:MyLoadingComponent
+})
+//Login
+const AsyncLogin=Loadable({
+    loader:()=>import('../pages/login/login'),
+    loading:MyLoadingComponent
+})
 export default ()=>{
     return(
         <Switch>
@@ -46,6 +56,8 @@ export default ()=>{
             <Route path='/journal' component={AsyncJournal} />
             <Route path='/more' component={AsyncMore} />
             <Route path='/utils' component={AsyncUtils} />
+            <Route path='/register' component={AsyncRegister}/>
+            <Route path='/login' component={AsyncLogin}/> 
             <Redirect to='/'/>
         </Switch>
     )

@@ -135,7 +135,7 @@ class RegistrationForm extends Component {
 
     return (
       <div className='register' onClick={(e)=>{e.stopPropagation()}}>
-        <Form onSubmit={this.handleSubmit} action='/register' method='POST' style={{width:'90%'}}>
+        <Form onSubmit={this.handleSubmit} action='/register' method='POST' style={{width:'100%'}}>
           <FormItem
             {...formItemLayout}
             label="E-mail"
