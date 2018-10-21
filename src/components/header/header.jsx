@@ -26,7 +26,7 @@ class App extends Component {
         }
     }
     componentDidMount() {
-        
+        console.log('aa')
     }
     toLink(n) {
         const index = this.state.nav.indexOf(n)
