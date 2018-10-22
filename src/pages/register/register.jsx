@@ -55,7 +55,7 @@ class RegistrationForm extends Component {
           data: JSON.stringify(values)
         }).then((res) => {
           if (res.status === 200) {
-            window.location.href = "http://localhost:3000/register"
+            window.location.href = "http://localhost:3000/register";
           }
         })
       }
