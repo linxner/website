@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Row, Col } from 'antd';
-import Register from '../../pages/register/register';
-import Login from '../../components/login/login';
+
 import './header.less';
 
 const { Header } = Layout;
@@ -20,23 +19,57 @@ class App extends Component {
                 { indent: false, text: 'MORE', herf: '/more' },
                 { indent: false, text: 'UTILS', herf: '/utils' },
             ],
-            showRegister: false,
-            showMask: false,
-            showLogin: false
+            islogin: false
         }
     }
-    componentDidMount() {
+    componentDidMount = () => {
+        this.userName = this.getCookie('userid') || sessionStorage.getItem('userid')
+        console.log(this.getCookie('userid'), sessionStorage.getItem('userid'))
+        if (this.userName) {
+            this.setState({
+                islogin: true
+            })
+        } else {
+            this.setState({
+                islogin: false
+            })
+        }
+        // console.log(sessionStorage.getItem('userid'))
+    }
+    getCookie = (name) => {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (document.cookie.match(reg)) {
+            arr = document.cookie.match(reg)
+            return unescape(arr[2]);
+        }
+        else {
+            return null;
+        }
+    }
+    loginOut = () => {
         console.log('aa')
+        this.delCookie('userid')
+        sessionStorage.removeItem('userid')
+        this.props.history.push('/')
+        window.location.reload()
     }
     toLink(n) {
         const index = this.state.nav.indexOf(n)
         this.props.history.push({ pathname: this.state.nav[index].herf, state: { id: 999 } })
     }
-    showRegister = (e) => {
-        this.setState({
-            showRegister: e,
-            showLogin:!e
-        })
+    setCookie(c_name, c_pwd, exdays) {
+        var exdate = new Date(); //获取时间
+        exdate.setTime(exdate.getTime() + 24 * 60 * 60 * 1000 * exdays); //保存的天数
+        //字符串拼接cookie
+        window.document.cookie = "userName=" + c_name + ";path=/;expires=" + exdate.toGMTString();
+        window.document.cookie = "userPwd=" + c_pwd + ";path=/;expires=" + exdate.toGMTString();
+    }
+    delCookie = (name) => {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval = this.getCookie(name);
+        if (cval != null)
+            document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
     }
     render() {
         return (
@@ -49,7 +82,9 @@ class App extends Component {
                                 className={nav.indent ? 'nav-index' : ''}
                                 onClick={this.toLink.bind(this, nav)}>
                                 {nav.text}</a></Col>))}
-                            <Col span={2} offset={1}><Link to='/register'>register</Link><span>/</span><Link to='/login'>login</Link></Col>
+                            {
+                                this.state.islogin ? <span>欢迎！{this.userName} <span onClick={this.loginOut}>退出</span></span> : <Col span={2} offset={1}><Link to='/register'>register</Link><span>/</span><Link to='/login'>login</Link></Col>
+                            }
                         </Row>
                     </Header>
                     {/* {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete,Layout } from 'antd';
 import './register.less';
 
 
@@ -134,6 +134,7 @@ class RegistrationForm extends Component {
     ));
 
     return (
+      <Layout>
       <div className='register' onClick={(e)=>{e.stopPropagation()}}>
         <Form onSubmit={this.handleSubmit} action='/register' method='POST' style={{width:'100%'}}>
           <FormItem
@@ -262,6 +263,7 @@ class RegistrationForm extends Component {
           </FormItem>
         </Form>
       </div>
+      </Layout>
     );
   }
 

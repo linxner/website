@@ -70,9 +70,9 @@ app.post('/login', function (req, res) {
             res.sendStatus(400)
         }
         if(user.length>0){
-            res.send('登陆成功')
+            res.send('900') //登录成功
         }else{
-            res.send('登陆失败')
+            res.send('904')//登录失败
         }
     })
 })
