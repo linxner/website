@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Row, Col } from 'antd';
 import Register from '../../pages/register/register';
-import Login from '../../components/login/login';
+import Login from '../../pages/login/login';
 import './header.less';
 
 const { Header } = Layout;
@@ -44,7 +44,7 @@ class App extends Component {
                 <Layout>
                     <Header className="header" >
                         <Row type='flex' align='middle' justify="center">
-                            <Col span={5} offset={3} className="logo"><h1>LOGO</h1></Col>
+                            <Col span={5} offset={3} className="logo"><span>LOGO</span></Col>
                             {this.state.nav.map((nav, i) => (<Col span={2} key={i}><a
                                 className={nav.indent ? 'nav-index' : ''}
                                 onClick={this.toLink.bind(this, nav)}>
