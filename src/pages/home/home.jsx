@@ -1,18 +1,27 @@
-import React from 'react';
-// import { Button } from 'antd';
-// import { createStore } from 'redux';
-// import counter from '../../reducer/index';
+import React, { Component } from 'react';
+import axios from 'axios'
 
-// const store = createStore(counter)
-export default class Home extends React.Component {
-	render() {
-		return (
-			<div className="home">
-				<div className="mask">
-					
-				</div>
 
-			</div>
-		);
-	}
+export default class demo extends Component {
+    constructor() {
+        super()
+        this.state = {
+            getDataFromBase: ''
+        }
+    }
+    componentDidMount() {
+        axios.get('http://localhost:8080').then((res) => {
+            this.setState({
+                getDataFromBase: res.data
+			})
+			console.log(res)
+        })
+    }
+    render() {
+        return (
+            <div>
+                <span>{this.state.getDataFromBase}</span>
+            </div>
+        )
+    }
 }

@@ -10,7 +10,7 @@ class NormalLoginForm extends React.Component {
         this.props.form.validateFields((err, values) => {
             console.log(values)
             if (!err) {
-                axios.post('http://localhost:8808/login', { data: JSON.stringify(values) }).then((res) => {
+                axios.post('http://localhost:8080/login', { data: JSON.stringify(values) }).then((res) => {
                     console.log(res)
                     if (res.data === 900) {
                         setTimeout(() => {

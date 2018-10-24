@@ -51,11 +51,11 @@ class RegistrationForm extends Component {
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
-        axios.post('http://localhost:8808/register', {
+        axios.post('http://localhost:8080/register', {
           data: JSON.stringify(values)
         }).then((res) => {
           if (res.status === 200) {
-            window.location.href = "http://localhost:3000/register";
+           this.props.history.push('/register');
           }
         })
       }
