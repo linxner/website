@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete,Layout } from 'antd';
 import './register.less';
 
 
@@ -51,11 +51,11 @@ class RegistrationForm extends Component {
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
-        axios.post('http://localhost:8808/register', {
+        axios.post('http://localhost:8080/register', {
           data: JSON.stringify(values)
         }).then((res) => {
           if (res.status === 200) {
-            window.location.href = "http://localhost:3000/register"
+           this.props.history.push('/register');
           }
         })
       }
@@ -134,6 +134,7 @@ class RegistrationForm extends Component {
     ));
 
     return (
+      <Layout>
       <div className='register' onClick={(e)=>{e.stopPropagation()}}>
         <Form onSubmit={this.handleSubmit} action='/register' method='POST' style={{width:'100%'}}>
           <FormItem
@@ -262,6 +263,7 @@ class RegistrationForm extends Component {
           </FormItem>
         </Form>
       </div>
+      </Layout>
     );
   }
 

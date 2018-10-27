@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }))
-//设置跨域访问
+// 设置跨域访问
 app.all('*', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Content-Type,XFILENAME,XFILECATEGORY,XFILESIZE");
@@ -70,12 +70,12 @@ app.post('/login', function (req, res) {
             res.sendStatus(400)
         }
         if(user.length>0){
-            res.send('登陆成功')
+            res.send('900') //登录成功
         }else{
-            res.send('登陆失败')
+            res.send('904')//登录失败
         }
     })
 })
-app.listen(8808, function (param) {
-    console.log('node成功监听在8808端口')
+app.listen(8080, function (param) {
+    console.log('node成功监听在8080端口')
 })
