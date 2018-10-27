@@ -4,7 +4,12 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const router = express.Router();
 const User = require('./database/model');
-
+const fs = require('fs');
+const path=require('path');
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+console.log(require(resolveApp('../package.json')).homepage); 
+console.log(process.env)
 mongoose.connect('mongodb://localhost/website', {
     useNewUrlParser: true
 }, function (param) {
@@ -26,6 +31,26 @@ app.all('*', function (req, res, next) {
 app.get('/', function (req, res) {
     res.send('node启动成功')
 })
+// app.post('/', function (req, res) {
+//     const registerData = JSON.parse(req.body.data); // 解析一下JSON格式数据
+//     if (registerData) {
+//         console.log(registerData);
+//         res.send(`phone:${registerData.phone},username:${registerData.userName},password:${registerData.passWord}`); // 向前端发送数据
+//         const user = new User({
+//             phone: registerData.phone,
+//             username: registerData.userName,
+//             password: registerData.passWord,
+//             date: (new Date()).getTime()
+//         })
+//         user.save(function (err, user) {
+//             if (err) {
+//                 console.log(err);
+//             } else {
+//                 console.log(user);
+//             }
+//         })
+//     }
+// })
 app.post('/register', function (req, res) {
     var postRegisterValues = JSON.parse(req.body.data)
     if (!postRegisterValues) {
@@ -51,7 +76,7 @@ app.post('/register', function (req, res) {
         user.save(function (err, product) {
             if (err) {
                 console.log(err)
-            } else{
+            } else {
                 console.log('save successful')
             }
         })
@@ -60,19 +85,19 @@ app.post('/register', function (req, res) {
 })
 app.post('/login', function (req, res) {
     var postLoginValue = JSON.parse(req.body.data)
+    // console.log(postLoginValue.userName)
     User.find({
         nickname: postLoginValue.userName
-    }, function (err,user) {
-        console.log(typeof(user))
-        console.log(user.length)
-        if(err){
+    }, function (err, user) {
+        console.log(user)
+        if (err) {
             console.log(err)
             res.sendStatus(400)
         }
-        if(user.length>0){
+        if (user.length > 0) {
             res.send('900') //登录成功
-        }else{
-            res.send('904')//登录失败
+        } else {
+            res.send('904') //登录失败
         }
     })
 })
