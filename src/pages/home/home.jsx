@@ -32,6 +32,7 @@ export default class demo extends Component {
                     密码：<input type="password" onChange={(e) => { this.user.passWord = e.target.value }} />
                     <button onClick={this.login}>登录</button>
                     <div></div>
+                    <div></div>
                 </div>
             </div>
         )
