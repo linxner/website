@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Row, Col } from 'antd';
-
+import Register from '../../pages/register/register';
+import Login from '../../pages/login/login';
 import './header.less';
 
 const { Header } = Layout;
@@ -47,15 +48,15 @@ class App extends Component {
         }
     }
     loginOut = () => {
-        console.log('aa')
-        this.delCookie('userid')
-        sessionStorage.removeItem('userid')
-        this.props.history.push('/')
-        window.location.reload()
+        console.log('aa');
+        this.delCookie('userid');
+        sessionStorage.removeItem('userid');
+        this.props.history.push('/');
+        window.location.reload();
     }
     toLink(n) {
-        const index = this.state.nav.indexOf(n)
-        this.props.history.push({ pathname: this.state.nav[index].herf, state: { id: 999 } })
+        const index = this.state.nav.indexOf(n);
+        this.props.history.push({ pathname: this.state.nav[index].herf, state: { id: 999 } });
     }
     setCookie(c_name, c_pwd, exdays) {
         var exdate = new Date(); //获取时间
@@ -77,7 +78,7 @@ class App extends Component {
                 <Layout>
                     <Header className="header" >
                         <Row type='flex' align='middle' justify="center">
-                            <Col span={5} offset={3} className="logo"><h1>LOGO</h1></Col>
+                            <Col span={5} offset={3} className="logo"><span>LOGO</span></Col>
                             {this.state.nav.map((nav, i) => (<Col span={2} key={i}><a
                                 className={nav.indent ? 'nav-index' : ''}
                                 onClick={this.toLink.bind(this, nav)}>
