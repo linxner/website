@@ -18,6 +18,12 @@ export default class Blog extends React.Component {
 					<div className='content'>
 						我的博客内容
 					</div>
+					<div className='content'>
+						我的博客内容
+					</div>
+					<div className='content'>
+						我的博客内容
+					</div>
 				</div>
 			</div>
 		);
