@@ -33,6 +33,9 @@ export default class demo extends Component {
                     <button onClick={this.login}>登录</button>
                     <div></div>
                     <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </div>
         )
