@@ -10,5 +10,5 @@ import './assets/css/normalize.css'
 
 // const newHistory = createBrowserHistory();
 ReactDOM.render(
-		<App/>
-, document.getElementById('root'));
+    <App/>
+    , document.getElementById('root'));

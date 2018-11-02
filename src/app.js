@@ -5,14 +5,14 @@ const mongoose = require('mongoose');
 const router = express.Router();
 const User = require('./database/model');
 const fs = require('fs');
-const path=require('path');
+const path = require('path');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
-console.log(require(resolveApp('../package.json')).homepage); 
+console.log(require(resolveApp('../package.json')).homepage);
 console.log(process.env)
 mongoose.connect('mongodb://localhost/website', {
     useNewUrlParser: true
-}, function (param) {
+}, function () {
     console.log('mongodb connected')
 });
 app.use(bodyParser.json());
