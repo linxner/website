@@ -55,7 +55,12 @@ class App extends Component {
         window.location.reload();
     }
     toLink(n) {
+        console.log(this.props.history.location)
         const index = this.state.nav.indexOf(n);
+        this.state.nav.forEach((e)=>{
+            e.indent=false
+        })
+        this.state.nav[index].indent=true;
         this.props.history.push({ pathname: this.state.nav[index].herf, state: { id: 999 } });
     }
     setCookie(c_name, c_pwd, exdays) {
@@ -73,9 +78,10 @@ class App extends Component {
             document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
     }
     render() {
+
         return (
             <div className='header'>
-                <Layout>
+                <Layout style={{backgroundColor:'rgba(0,0,0,0)'}}>
                     <Header className="header" >
                         <Row type='flex' align='middle' justify="center">
                             <Col span={5} offset={3} className="logo"><span>LOGO</span></Col>

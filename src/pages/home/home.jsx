@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import './home.less';
 
 
 export default class demo extends Component {
@@ -26,23 +27,8 @@ export default class demo extends Component {
 
     render() {
         return (
-            <div>
-                <span>{}</span>
-                <div className='login'>
-                    手机号：<input type="text" onChange={(e) => {
-                    this.user.phone = e.target.value
-                }}/>
-                    账号：<input type="text" onChange={(e) => {
-                    this.user.userName = e.target.value
-                }}/>
-                    密码：<input type="password" onChange={(e) => {
-                    this.user.passWord = e.target.value
-                }}/>
-                    <button onClick={this.login}>登录</button>
-                </div>
-                <div className='add'>
-
-                </div>
+            <div className='home'>
+                <h1 className='title'>Create</h1>
             </div>
         )
     }
