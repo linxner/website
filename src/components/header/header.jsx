@@ -12,6 +12,8 @@ function Button({theme, ...rest}) {
     return <button className={theme} {...rest}></button>
 }
 
+const ThemedButton = withTheme(Button);
+
 class App extends Component {
     constructor(props) {
         super(props)
@@ -40,6 +42,7 @@ class App extends Component {
                 islogin: false
             })
         }
+        console.log(withTheme(Button))
         // console.log(sessionStorage.getItem('userid'))
     }
     getCookie = (name) => {
@@ -87,7 +90,6 @@ class App extends Component {
     }
 
     render() {
-        const ThemeButton = withTheme(Button)
         return (
             <div className='header'>
                 <Layout style={{backgroundColor: 'rgba(0,0,0,0)'}}>
@@ -121,10 +123,9 @@ class App extends Component {
                             }
                         </div>
                     } */}
-                    {
-                        ThemeButton
-                    }
+
                 </Layout>
+                <ThemedButton></ThemedButton>
             </div>
 
         );

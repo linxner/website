@@ -3,13 +3,12 @@ import React from 'react';
 const ThemeContext = React.createContext('light');
 
 
-export function withTheme(Component) {
+export default function withTheme(Component) {
     return function ThemeComponent(props) {
         return (
-            <ThemeComponent.Consumer>
+            <ThemeContext.Consumer>
                 {(theme) => <Component {...props} theme={theme}></Component>}
-            </ThemeComponent.Consumer>
+            </ThemeContext.Consumer>
         )
     }
-
 }
