@@ -22,11 +22,10 @@ export default class Blog extends React.Component {
                             <p>喜欢</p>
                             <p>12</p>
                         </div>
-
                     </div>
                 </div>
                 <div className='blogWrapper'>
-
+                    <div className="title">标题</div>
                 </div>
             </div>
         );

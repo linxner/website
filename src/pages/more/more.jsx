@@ -33,6 +33,9 @@ export default class Blog extends React.Component {
 				<div className='Email'>
 					邮箱
 				</div>
+				<div className='Email'>
+					邮箱
+				</div>
 			</div>
 		);
 	}
