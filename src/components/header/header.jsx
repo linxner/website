@@ -1,25 +1,17 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import {Layout, Row, Col} from 'antd';
-import Register from '../../pages/register/register';
-import Login from '../../pages/login/login';
 import './header.less';
-import withTheme from '../Theme';
 
 const {Header} = Layout;
 
-function Button({theme, ...rest}) {
-    return <button className={theme} {...rest}></button>
-}
-
-const ThemedButton = withTheme(Button);
 
 class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
             nav: [
-                {indent: true, text: 'HOME', herf: '/'},
+                {indent: false, text: 'HOME', herf: '/'},
                 {indent: false, text: 'PROJECT', herf: '/project'},
                 {indent: false, text: 'BLOG', herf: '/blog'},
                 {indent: false, text: 'JOURNAL', herf: '/journal'},
@@ -42,8 +34,6 @@ class App extends Component {
                 islogin: false
             })
         }
-        console.log(withTheme(Button))
-        // console.log(sessionStorage.getItem('userid'))
     }
     getCookie = (name) => {
         var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
@@ -96,10 +86,18 @@ class App extends Component {
                     <Header className="header">
                         <Row type='flex' align='middle' justify="center">
                             <Col span={5} offset={3} className="logo"><span>LOGO</span></Col>
-                            {this.state.nav.map((nav, i) => (<Col span={2} key={i}><a
-                                className={nav.indent ? 'nav-index' : ''}
-                                onClick={this.toLink.bind(this, nav)}>
-                                {nav.text}</a></Col>))}
+                            {this.state.nav.map((nav, i) => (
+                                <Col span={2} key={i}>
+                                    <NavLink
+                                        exact
+                                        to={nav.herf}
+                                        activeClassName={'nav-index'}
+                                        className={'nav'}
+                                    >
+                                        {nav.text}
+                                    </NavLink>
+                                </Col>))
+                            }
                             {
                                 this.state.islogin ?
                                     <span>欢迎！{this.userName} <span onClick={this.loginOut}>退出</span></span> :
@@ -125,7 +123,6 @@ class App extends Component {
                     } */}
 
                 </Layout>
-                <ThemedButton></ThemedButton>
             </div>
 
         );
