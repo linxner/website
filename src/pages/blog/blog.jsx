@@ -29,6 +29,11 @@ export default class Blog extends React.Component {
                     <div className="title">描述</div>
                     <div className="title">描述</div>
                     <div className="title">描述</div>
+                    <div className="title">描述</div>
+                    <div className="title">描述</div>
+                    <div className="title">描述</div>
+                    <div className="title">描述</div>
+                    <div className="title">描述</div>
                 </div>
             </div>
         );
