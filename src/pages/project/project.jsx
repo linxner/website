@@ -1,54 +1,53 @@
 import React from 'react';
+import data from './data'
+import './project.less'
+import MySwiper from '../../components/swiper/swiper'
 
 export default class Project extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            imgs: []
+        }
+        this.detailShow = false
+    }
 
-	componentDidMount(){
-		console.log(this.props.location.state)
-	}
-	render() {
-		return (
-			<div className="project">
-				<h1>Project</h1>
-				<div className="container">
-					<div className="row">
-						{/*
-						<div className="col-md-1 col-md-offset-1">
-							<button type="button" className="btn btn-default">（默认样式）Default</button>
-						</div>
-						<div className="col-md-1 col-md-offset-1">
-							<button type="button" className="btn btn-primary">（首选项）Primary</button>
-						</div>
-						<div className="col-md-1 col-md-offset-1">
-							<button type="button" className="btn btn-success">（成功）Success</button>
-						</div>
-						<div className="col-md-1 col-md-offset-1">
-							<button type="button" className="btn btn-info">（一般信息）Info</button>
-						</div>
-						<div className="col-md-1 col-md-offset-1">
-							<button type="button" className="btn btn-warning">（警告）Warning</button>
-						</div>
-						<div className="col-md-1 col-md-offset-1">
-							<button type="button" className="btn btn-danger">（危险）Danger</button>
-						</div>
-						*/}
+    componentDidMount() {
+        console.log(this.props.location.state)
+    }
 
-						                                
-						<div className="col-md-3 col-md-offset-3">
-							<button type="button" className="btn btn-primary">（首选项）Primary</button>
-						</div>
-						<div className="col-md-3 col-md-offset-3">
-							<button type="button" className="btn btn-primary">（首选项）Primary</button>
-						</div>
-						<div className="col-md-3 col-md-offset-3">
-							<button type="button" className="btn btn-primary">（首选项）Primary</button>
-						</div>
-						<div className="col-md-3 col-md-offset-3">
-							<button type="button" className="btn btn-primary">（首选项）Primary</button>
-						</div>
-					</div>
-				</div>
-			</div>
+    takeDetail(e) {
+        this.setState({
+            imgs: data[e].imgs
+        })
+        this.detailShow=true
+    }
 
-		);
-	}
+    render() {
+        return (
+            <div className="project">
+                <h1>H5</h1>
+                <div className="pro-list">
+                    {
+                        data.map((item, index) => {
+                            return (
+                                <div className={'list-wrapper'} key={item.name}
+                                     onClick={this.takeDetail.bind(this, index)}>
+                                    <div className="img-wrapper"></div>
+                                    <span className={'list-des'}>{item.name}</span>
+                                    <span>腾讯公益获奖项目</span>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                {
+                    this.detailShow && <div className="details">
+                        <MySwiper imgs={this.state.imgs}/>
+                    </div>
+                }
+            </div>
+
+        );
+    }
 }
