@@ -44,6 +44,7 @@ export default class Project extends React.Component {
                 {
                     this.detailShow && <div className="details">
                         <MySwiper imgs={this.state.imgs}/>
+                        <MySwiper imgs={this.state.imgs}/>
                     </div>
                 }
             </div>
