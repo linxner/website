@@ -29,6 +29,7 @@ export default class demo extends Component {
         return (
             <div className='home'>
                 <h1 className='title'>Create</h1>
+                <h1 className='title'>Create</h1>
             </div>
         )
     }
